@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <stdint.h>
 #include <sys/stat.h>
 
 void print_usage(char *argv0){
@@ -55,7 +56,7 @@ int main(int argc, char **argv){
     size_t frequency[0x100] = {0};
 
     for(size_t i = 0; i < infile_size; i++){
-        frequency[infile_buf[i]]++;
+        frequency[(uint8_t) infile_buf[i]]++;
     }
     
     for(size_t i = 0; i < sizeof(frequency)/sizeof(frequency[0]); i++){
