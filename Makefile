@@ -1,3 +1,6 @@
+CFLAGS = -g -O3
+
+
 all: countbytes
 
 countbytes: main.c
