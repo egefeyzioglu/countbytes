@@ -50,6 +50,7 @@ int main(int argc, char **argv){
         snprintf(msg, 1023, "Expected to read %lu bytes but only got %d bytes", infile_size, nread);
         perror(msg);
         fclose(infile);
+        free(infile_buf);
         return -1;
     }
     
